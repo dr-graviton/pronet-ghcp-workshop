@@ -1,0 +1,55 @@
+Project prerequisites (Windows / PowerShell)
+
+Complete this setup before following the CommunityCal instructions.
+
+1. Set up VS Code and GitHub Copilot
+
+   - Install VS Code: https://code.visualstudio.com/
+   - Open Extensions (Ctrl+Shift+X) and install the official GitHub Copilot
+     extension. Complete any related Copilot Chat setup.
+   - Sign in with a GitHub account that has Copilot access.
+   - Confirm that you can send a message in Copilot Chat.
+   - Internet access and a model that supports image input are needed for fliers.
+
+2. Install and check Python
+
+   - Install Python 3.11 or newer: https://www.python.org/downloads/
+   - Select "Add python.exe to PATH" if the installer offers it.
+   - Restart VS Code after installation and open a PowerShell terminal.
+   - Run:
+
+     python --version
+     python -c "print('Python is working')"
+
+   If python is not recognized, try py instead. If py works, use it in place
+   of python below. If neither works, repair or reinstall Python. If python
+   opens the Microsoft Store, check the installer's command/alias setup.
+
+3. Open the project root
+
+   - In VS Code, choose File > Open Folder and open C:\sandbox\pronet
+     (or your own project location), not just the CommunityCal subfolder.
+   - Trust the folder only if you trust its source.
+   - Open a new PowerShell terminal and run:
+
+     Get-Location
+     Test-Path .\CommunityCal\data\CreateAgentPrompt.txt
+
+   The second command should return True. Run all commands below from this
+   project root. Workspace agents belong in .github\agents at the root.
+
+4. Create the Python environment and install requirements
+
+   This is needed for the webapp and automated tests, but not for creating
+   or testing the custom agent in Copilot Chat.
+
+   Skip the first command if a working .venv already exists:
+
+   python -m venv .\.venv
+   .\.venv\Scripts\python.exe -m pip install -r .\requirements.txt
+   .\.venv\Scripts\python.exe -c "from copilot import CopilotClient; print('Copilot SDK installed')"
+
+   No environment activation is needed when using this executable path.
+   The import check does not verify authentication or a working SDK session.
+   If a moved environment fails, rename .venv to keep a backup, then rerun
+   these commands to create a fresh environment and reinstall requirements.
