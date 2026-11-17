@@ -1,0 +1,13 @@
+I need to create a google cloud app that can create a calendar, create events and read events. This will be called by the webapp backend. What questions do you have for me before starting the setup
+
+---
+
+Save instructions to md
+
+---
+
+Cross validate
+
+---
+
+Begin creation

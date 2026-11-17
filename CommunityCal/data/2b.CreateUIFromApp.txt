@@ -1,0 +1,6 @@
+Create CommunityCal/app.py from "CommunityCal\data\app.sample". 
+
+Build a index.html that speaks to the backend. It should support the following operations:
+1. Update a flier (in image format)
+2. Call the app backend to get Json
+3. User can review the json, then choose to update the Calender

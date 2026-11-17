@@ -1,0 +1,4 @@
+Create a simple webapp that accepts an image upload and uses copilot sdk to call FlierReaderAgent to extract the data. Use only the dependencies defined in requirements.txt
+Reference copilot SDK samples in this repo: https://github.com/microsoft/copilot-sdk-samples
+
+Use the 'GPT-6.1 Sol' model for the agent's image analysis.
